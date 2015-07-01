@@ -1,0 +1,126 @@
+# @version: v0.5
+# @date:    2015-07-01
+# @file:    /.gitignore
+#
+# Base System gitignore to exclude binaries, logs, etc
+# in order to keep track of changing config files.
+#
+# @Requirements:
+#    * PGP Key in root directory
+#    * PGP Key needs passphrase (otherwise there is no protection against rooted environments @see 2.)
+#
+# @description:
+#    Anytime you change a config, you can commit it to git.
+#    You must make a SIGNED git commit via: git commit -S -am '<message>'
+#
+#    1.) You can always check git status, if something has changed that you didnt do.
+#        root> git status
+#
+#    2.) In case an intruder has reached root-access and committed his changed, you just
+#        search for commits not using a pgp signature:
+#        root> git log --show-signature
+#
+
+
+#######################################################################
+# User defined wants
+#######################################################################
+
+# Comment this line out if you want to see sudo activity
+/var/db/sudo/*
+
+
+
+
+
+
+#######################################################################
+# Standard Excludes
+#######################################################################
+
+
+######## 1.0) base ########
+#/bin
+/dev/
+/home/
+/lib
+/lib64
+/lost+found/
+/media/
+/mnt/
+/opt/
+/proc/
+/run/
+#/sbin
+/shared/
+/srv/
+/sys/
+/tmp/
+
+
+
+######## 2.0) /boot ########
+/boot/vmlinuz*
+/boot/*.img
+/boot/*.hmac
+/boot/*.gz
+
+
+######## 3.0) /etc ########
+/etc/selinux/targeted/modules/active/modules/*.pp
+
+
+######## 4.0) /root ########
+/root/.bash_history
+/root/.viminfo
+
+
+######## 5.0) /usr ########
+#/usr/bin/
+/usr/games/
+/usr/include/
+/usr/lib/
+/usr/lib64/
+/usr/libexec/
+#/usr/sbin/
+/usr/share/
+/usr/src/
+/usr/tmp
+
+
+######## 5.1) /usr/local ########
+#/usr/local/bin/
+/usr/local/games/
+/usr/local/include/
+/usr/local/lib/
+/usr/local/lib64/
+/usr/local/libexec/
+#/usr/local/sbin/
+/usr/local/share/
+/usr/local/src/
+
+
+######## 6.0) /var ########
+/var/cache/
+/var/log/
+/var/mail/
+/var/spool/
+/var/tmp/
+/var/www/
+
+
+######## 6.1) /var/lib ########
+/var/lib/git*
+/var/lib/pear/
+/var/lib/logrotate.status
+/var/lib/mysql/
+/var/lib/ntp/drift
+/var/lib/plymouth/boot-duration
+/var/lib/php/session
+/var/lib/postfix/master.lock
+/var/lib/rpm/
+/var/lib/systemd/random-seed
+/var/lib/tripwire/*
+/var/lib/yum/history/
+/var/lib/yum/yumdb/
+/var/lib/NetworkManager/
