@@ -1,5 +1,7 @@
+#
+# @author:  Patrick Plocke <patrick@plocke.de>
 # @version: v0.5
-# @date:    2015-07-01
+# @date:    2015-03-24
 # @file:    /.gitignore
 #
 # Base System gitignore to exclude binaries, logs, etc
@@ -28,7 +30,7 @@
 
 # Comment this line out if you want to see sudo activity
 /var/db/sudo/*
-
+/root/repo/*
 
 
 
@@ -73,29 +75,29 @@
 ######## 4.0) /root ########
 /root/.bash_history
 /root/.viminfo
+/root/.lesshst
 
 
 ######## 5.0) /usr ########
-#/usr/bin/
+/usr/bin/
 /usr/games/
 /usr/include/
 /usr/lib/
 /usr/lib64/
 /usr/libexec/
-#/usr/sbin/
+/usr/sbin/
 /usr/share/
 /usr/src/
 /usr/tmp
 
-
 ######## 5.1) /usr/local ########
-#/usr/local/bin/
+/usr/local/bin/
 /usr/local/games/
 /usr/local/include/
 /usr/local/lib/
 /usr/local/lib64/
 /usr/local/libexec/
-#/usr/local/sbin/
+/usr/local/sbin/
 /usr/local/share/
 /usr/local/src/
 
@@ -103,14 +105,16 @@
 ######## 6.0) /var ########
 /var/cache/
 /var/log/
-/var/mail/
-/var/spool/
+/var/mail
+/var/spool/mail/
+/var/spool/postfix/
+/var/spool/anacron/
 /var/tmp/
-/var/www/
-
 
 ######## 6.1) /var/lib ########
-/var/lib/git*
+/var/lib/gitolite3/repositories/
+/var/lib/gitolite3/.gitolite/logs
+/var/lib/gitolite3/.bash_history
 /var/lib/pear/
 /var/lib/logrotate.status
 /var/lib/mysql/
@@ -119,8 +123,11 @@
 /var/lib/php/session
 /var/lib/postfix/master.lock
 /var/lib/rpm/
+/var/lib/rpm/__db.*
 /var/lib/systemd/random-seed
 /var/lib/tripwire/*
 /var/lib/yum/history/
+/var/lib/yum/rpmdb-indexes/
 /var/lib/yum/yumdb/
 /var/lib/NetworkManager/
+
